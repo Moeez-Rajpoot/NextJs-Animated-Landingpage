@@ -12,11 +12,22 @@ import mobwithdiv from "../public/mobwithdiv.json";
 import loc from "../public/location.png";
 import react from "../public/react.svg";
 import flutter from "../public/flutter.svg";
+import Location from "../public/location.json";
+import { useState } from "react";
 
 const prompt = Prompt({
   weight: "400",
   subsets: ["latin"],
 });
+
+const defaultlocation = {
+  loop: true,
+  autoplay: false,
+  animationData: Location,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
 
 const defaultOptionsmob1 = {
   loop: true,
@@ -73,6 +84,8 @@ const defaultCenter = {
 };
 
 export default function Home() {
+
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <>
       <div>
@@ -304,10 +317,53 @@ export default function Home() {
 
         {/* Section 3 */}
         <div
-          className=" bg-gradient-to-b from-gray-900 to-indigo-900 h-[150vh] w-full text-white mt-20"
+          className=" bg-slate-200 h-[150vh] w-full text-white "
           id="section3"
 
         >
+
+          <div className=" flex flex-col  items-center w-full h-fit text-white">
+           <h1 className="text-5xl font-extrabold text-slate-700 mt-32 " >Test how our app animations work!</h1>
+
+           <p className="text-xl text-slate-600 mt-3">Download this demo file and test it in your framework.</p>
+
+           <div onMouseEnter={(e)=>{setIsLoading(false)}} onMouseLeave={(e)=>{setIsLoading(true)}} id="locimage" className="h-fit mt-20 ">
+           <Lottie options={defaultlocation} height={300} width={300} isStopped={isLoading} />
+           </div>
+
+           <div id="sec3btns" className="flex gap-6 mt-10 " >
+            <button className="px-8 py-3 bg-blue-900 hover:bg-blue-800 rounded-lg shadow-md text-lg font-semibold">
+              Download Demo.js
+            </button>
+
+            <button className="px-8 py-3 bg-blue-300 hover:bg-blue-400 rounded-lg shadow-md text-lg font-semibold">
+              Download Demo.dart
+            </button>
+           </div>
+
+           <h3 className="text-lg font-semibold text-slate-800 mt-7" >Requirements</h3>
+           <p className="text-md font-light text-slate-700 mt-2">Get the player and the Web View module for Flutter or React native</p>
+
+           <p className="text-slate-800 p-2">
+            <span className="text-blue-600 underline text-md font-semibold p-2">Flutter</span> Or <span className="text-blue-600 underline text-md font-semibold p-2"> React </span>
+           </p>
+
+          </div>
+
+          </div>
+
+          {/* Section 4 */}
+          <div
+          className=" bg-slate-900 h-fit w-full flex flex-col items-center pb-28"
+
+        >
+          <h1 className="text-6xl text-slate-50 font-bold mt-40 text-center ">
+          How to create animations 
+        <br />
+          <span>for mobile apps</span>
+          </h1>
+
+
 
           </div>
       </div>
