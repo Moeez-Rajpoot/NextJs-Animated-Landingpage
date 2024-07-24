@@ -7,12 +7,19 @@ import Lottie from "react-lottie";
 import blockfile from "../public/block.json";
 import checkmark from "../public/checkmark.json";
 import diffmob from "../public/diffmob.json";
-import mob from "../public/mob.json";
+import space from "../public/space.json";
 import mobwithdiv from "../public/mobwithdiv.json";
 import Footer from "@/components/footer";
+import create from "@/public/create.json";
 import Section4 from "@/components/Section4";
 import Section3 from "@/components/Section3";
 import Section2 from "@/components/Section2";
+import {
+  Fade,
+  Zoom,
+  JackInTheBox,
+  AttentionSeeker,
+} from "react-awesome-reveal";
 
 const prompt = Prompt({
   weight: "400",
@@ -22,16 +29,7 @@ const prompt = Prompt({
 const mobfile = {
   loop: true,
   autoplay: true,
-  animationData: mob,
-  rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice",
-  },
-};
-
-const mobimagefile = {
-  loop: true,
-  autoplay: true,
-  animationData: mob1image,
+  animationData: space,
   rendererSettings: {
     preserveAspectRatio: "xMidYMid slice",
   },
@@ -46,6 +44,14 @@ const diffmobfile = {
   },
 };
 
+const createfile = {
+  loop: true,
+  autoplay: false,
+  animationData: create,
+  rendererSettings: {
+    preserveAspectRatio: "xMidYMid slice",
+  },
+};
 const checkmarkfile = {
   loop: true,
   autoplay: true,
@@ -75,9 +81,23 @@ const defaultCenter = {
 
 export default function Home() {
   const [dimensions, setDimensions] = useState({ width: 280, height: 400 });
-  const [checkmarkDimensions, setCheckmarkDimensions] = useState({ width: 80, height: 80 });
-  const [mobWithDivDimensions, setMobWithDivDimensions] = useState({ width: 250, height: 170 });
-  const [defaultCenterDimensions, setDefaultCenterDimensions] = useState({ width: 100, height: 100 });
+  const [checkmarkDimensions, setCheckmarkDimensions] = useState({
+    width: 80,
+    height: 80,
+  });
+  const [mobWithDivDimensions, setMobWithDivDimensions] = useState({
+    width: 250,
+    height: 170,
+  });
+  const [defaultCenterDimensions, setDefaultCenterDimensions] = useState({
+    width: 100,
+    height: 100,
+  });
+  const [Lottie2, setLottie2] = useState(true);
+  const [Lottie1, setLottie1] = useState(true);
+  const [Lottie3, setLottie3] = useState(true);
+  const [Lottie4, setLottie4] = useState(true);
+  const [Lottie5, setLottie5] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -103,15 +123,21 @@ export default function Home() {
   return (
     <>
       <div>
-        {/* <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-indigo-900 h-[150vh] w-full text-white mt-20">
-          <h1 className="text-5xl text-center mt-10 sm:text-7xl sm:px-36 sm:mt-20 font-bold flex flex-col justify-center items-center">
-            Create Lightweight
-            <span>Mobile App Animations</span>
-          </h1>
+        <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-indigo-900 h-[150vh] w-full text-white mt-20">
+          <AttentionSeeker fraction={0} effect="rubberBand">
+            <h1 className="text-5xl text-center mt-10 sm:text-7xl sm:px-36 sm:mt-20 font-bold flex flex-col justify-center items-center">
+              Create Lightweight
+              <span>Mobile App Animations</span>
+            </h1>
+          </AttentionSeeker>
 
-          <p className="mt-8 text-lg font-medium font-sans text-slate-200 lg:px-96 text-center">
-            Create impressive animations for mobile apps on a friendly and intuitive interface. Export cross-platform files for both Android and iOS.
-          </p>
+          <Fade duration={3000}>
+            <p className="mt-8 text-lg font-medium font-sans text-slate-200 lg:px-96 text-center">
+              Create impressive animations for mobile apps on a friendly and
+              intuitive interface. Export cross-platform files for both Android
+              and iOS.
+            </p>
+          </Fade>
 
           <p className="mt-4 text-xl font-semibold text-cyan-300">
             {" "}
@@ -123,145 +149,247 @@ export default function Home() {
           >
             Animate Now
           </button>
+          <JackInTheBox fraction={0}>
+            <Image
+              className="ml-[28%] mt-2"
+              alt="Free"
+              src={
+                "https://cdn.svgator.com/assets/landing-pages/static/common/52474455-0-its-free-LP-01.svg"
+              }
+              height={200}
+              width={200}
+            ></Image>
+          </JackInTheBox>
 
-          <Image
-            className="ml-[28%] mt-2"
-            alt="Free"
-            src={"https://cdn.svgator.com/assets/landing-pages/static/common/52474455-0-its-free-LP-01.svg"}
-            height={200}
-            width={200}
-          ></Image>
+          <div
+            id="section-mob"
+            className="flex justify-center items-center gap-2 lg:gap-5 h-fit mt-20 md:mt-28 pb-10 mb-10"
+          >
+            <Zoom duration={1000} fraction={0}>
+              <div className="w-24 h-[200px] lg:w-64 lg:h-[500px] bg-slate-400 rounded-xl pb-14">
+                <p className="hidden lg:block text-center">_______________</p>
+                <p className="block lg:hidden text-center">_________</p>
 
-          <div id="section-mob" className="flex justify-center items-center gap-2 lg:gap-5 h-fit mt-20 md:mt-28 pb-10 mb-10">
-            <div className="w-24 h-[200px] lg:w-64 lg:h-[500px] bg-slate-400 rounded-xl pb-14">
-              <p className="hidden lg:block text-center">_______________</p>
-              <p className="block lg:hidden text-center">_________</p>
-
-              <div id="inner-div" className="border-y-8 lg:border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-neutral-200 h-full">
-                <Image className="mt-3 lg:mt-16" alt="Free" src={mob1image} height={500} width={500}></Image>
-                <div id="design" className="flex justify-center mt-0 lg:mt-10">
-                  <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-400"></div>
-                </div>
-              </div>
-
-              <p className="hidden lg:block text-center">_______________</p>
-              <p className="block h-fit lg:hidden text-center">_________</p>
-            </div>
-
-            <div className="hidden xl:block w-64 h-[550px] bg-blue-800 rounded-xl pb-14">
-              <p className="text-center">_______________</p>
-
-              <div
-                id="inner-div"
-                className="border-y-8 border-x-4 border-x-transparent-300 rounded-3xl bg-blue-200 h-full"
-              >
-                <div id="design" className="flex justify-end mr-5 mt-10">
-                  <div className="rounded-lg  w-1/4 h-12 bg-blue-300 flex justify-center items-center">
-                    <div className="rounded-lg w-[87%] h-[89%] border-2"></div>
+                <div
+                  id="inner-div"
+                  className="border-y-8 lg:border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-neutral-200 h-full"
+                >
+                  <div
+                    onMouseEnter={(e) => {
+                      setLottie1(false);
+                    }}
+                    onMouseLeave={(e) => {
+                      setLottie1(true);
+                    }}
+                  >
+                    <Lottie
+                      options={mobfile}
+                      height={dimensions.height}
+                      width={dimensions.width}
+                      isStopped={Lottie1}
+                    />
+                  </div>
+                  <div
+                    id="design"
+                    className="flex justify-center mt-0 lg:mt-10"
+                  >
+                    <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-400"></div>
                   </div>
                 </div>
 
-                <div className="mt-20">
-                <Lottie options={defaultCenter} height={200} width={200} />
-                </div>
-
-                <div id="design" className="flex justify-center ">
-                  <div className="rounded-lg py-3 w-2/3 bg-blue-800"></div>
-                </div>
+                <p className="hidden lg:block text-center">_______________</p>
+                <p className="block h-fit lg:hidden text-center">_________</p>
               </div>
+            </Zoom>
 
-              <p className="text-center">_______________</p>
-            </div>
+            <Zoom duration={1000} fraction={0}>
+              <div className="hidden xl:block w-64 h-[550px] bg-blue-800 rounded-xl pb-14">
+                <p className="text-center">_______________</p>
 
-            <div className="w-28 h-[250px] lg:w-72 lg:h-[600px] bg-black rounded-xl pb-14">
-              <p className="hidden lg:block text-center">_______________</p>
-              <p className="block lg:hidden text-center">___________</p>
-
-              <div id="inner-div" className="border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-blue-100 h-full">
-                <Lottie options={diffmobfile} height={dimensions.height} width={dimensions.width} />
-                <Lottie options={checkmarkfile} height={checkmarkDimensions.height} width={checkmarkDimensions.width} />
-
-                <div id="design" className="flex justify-center">
-                  <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-700"></div>
-                </div>
-              </div>
-
-              <p className="hidden lg:block text-center">_______________</p>
-              <p className="block lg:hidden text-center">___________</p>
-            </div>
-
-
-            <div className="hidden xl:block w-64 h-[550px] bg-blue-900 rounded-xl pb-14">
-              <p className="text-center">_______________</p>
-
-              <div
-                id="inner-div"
-                className="border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-blue-200 h-full"
-              >
-                <div className="flex justify-center ml-4 items-center">
+                <div
+                  id="inner-div"
+                  className="border-y-8 border-x-4 border-x-transparent-300 rounded-3xl bg-blue-200 h-full"
+                >
                   <div id="design" className="flex justify-end mr-5 mt-10">
-                    <div className="rounded-lg  w-[50px] h-12 bg-blue-400 flex justify-center items-center">
-                      <div className="rounded-lg w-[40px] h-[89%] border-2"></div>
+                    <div className="rounded-lg  w-1/4 h-12 bg-blue-300 flex justify-center items-center">
+                      <div className="rounded-lg w-[87%] h-[89%] border-2"></div>
                     </div>
                   </div>
-                  <div id="design" className="flex justify-end mr-5 mt-10">
-                    <div className="rounded-lg  w-[50px] h-12 bg-blue-400 flex justify-center items-center">
-                      <div className="rounded-lg w-[40px] h-[89%] border-2"></div>
+
+                  <div
+                    onMouseEnter={(e) => {
+                      setLottie2(false);
+                    }}
+                    onMouseLeave={(e) => {
+                      setLottie2(true);
+                    }}
+                    className="mt-20"
+                  >
+                    <Lottie
+                      options={defaultCenter}
+                      height={200}
+                      width={200}
+                      isStopped={Lottie2}
+                    />
+                  </div>
+
+                  <div id="design" className="flex justify-center ">
+                    <div className="rounded-lg py-3 w-2/3 bg-blue-800"></div>
+                  </div>
+                </div>
+
+                <p className="text-center">_______________</p>
+              </div>
+            </Zoom>
+
+            <Zoom duration={1000} fraction={0}>
+              <div className="w-28 h-[250px] lg:w-72 lg:h-[600px] bg-black rounded-xl pb-14">
+                <p className="hidden lg:block text-center">_______________</p>
+                <p className="block lg:hidden text-center">___________</p>
+
+                <div
+                  id="inner-div"
+                  onMouseEnter={(e) => {
+                    setLottie3(false);
+                  }}
+                  onMouseLeave={(e) => {
+                    setLottie3(true);
+                  }}
+                  className="border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-blue-100 h-full"
+                >
+                  <Lottie
+                    options={diffmobfile}
+                    height={dimensions.height}
+                    width={dimensions.width}
+                    isStopped={Lottie3}
+                  />
+                  <Lottie
+                    options={checkmarkfile}
+                    height={checkmarkDimensions.height}
+                    width={checkmarkDimensions.width}
+                  />
+
+                  <div id="design" className="flex justify-center">
+                    <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-700"></div>
+                  </div>
+                </div>
+
+                <p className="hidden lg:block text-center">_______________</p>
+                <p className="block lg:hidden text-center">___________</p>
+              </div>
+            </Zoom>
+
+            <Zoom duration={1000} fraction={0}>
+              <div className="hidden xl:block w-64 h-[550px] bg-blue-900 rounded-xl pb-14">
+                <p className="text-center">_______________</p>
+
+                <div
+                  id="inner-div"
+                  className="border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-blue-200 h-full"
+                >
+                  <div className="flex justify-center ml-4 items-center">
+                    <div id="design" className="flex justify-end mr-5 mt-10">
+                      <div className="rounded-lg  w-[50px] h-12 bg-blue-400 flex justify-center items-center">
+                        <div className="rounded-lg w-[40px] h-[89%] border-2"></div>
+                      </div>
+                    </div>
+                    <div id="design" className="flex justify-end mr-5 mt-10">
+                      <div className="rounded-lg  w-[50px] h-12 bg-blue-400 flex justify-center items-center">
+                        <div className="rounded-lg w-[40px] h-[89%] border-2"></div>
+                      </div>
+                    </div>
+                    <div id="design" className="flex justify-end mr-5 mt-10">
+                      <div className="rounded-lg  w-[50px] h-12 bg-blue-400 flex justify-center items-center">
+                        <div className="rounded-lg w-[40px] h-[89%] border-2"></div>
+                      </div>
                     </div>
                   </div>
-                  <div id="design" className="flex justify-end mr-5 mt-10">
-                    <div className="rounded-lg  w-[50px] h-12 bg-blue-400 flex justify-center items-center">
-                      <div className="rounded-lg w-[40px] h-[89%] border-2"></div>
-                    </div>
+                  <div
+                    onMouseEnter={(e) => {
+                      setLottie4(false);
+                    }}
+                    onMouseLeave={(e) => {
+                      setLottie4(true);
+                    }}
+                  >
+                    <Lottie
+                      options={createfile}
+                      height={250}
+                      width={180}
+                      isStopped={Lottie4}
+                    />
+                  </div>
+                  <div id="design" className="flex justify-center mt-10">
+                    <div className="rounded-lg py-3 w-2/3 bg-blue-800"></div>
                   </div>
                 </div>
-                <Lottie options={mobfile} height={250} width={180} />
-                <div id="design" className="flex justify-center mt-10">
-                  <div className="rounded-lg py-3 w-2/3 bg-blue-800"></div>
-                </div>
+
+                <p className="text-center">_______________</p>
               </div>
+            </Zoom>
 
-              <p className="text-center">_______________</p>
-            </div>
+            <Zoom duration={1000} fraction={0}>
+              <div className="w-24 h-[200px] lg:w-64 lg:h-[500px] bg-slate-400 rounded-xl pb-14">
+                <p className="hidden lg:block text-center">_______________</p>
+                <p className="block lg:hidden text-center">_________</p>
 
-            <div className="w-24 h-[200px] lg:w-64 lg:h-[500px] bg-slate-400 rounded-xl pb-14">
-              <p className="hidden lg:block text-center">_______________</p>
-              <p className="block lg:hidden text-center">_________</p>
+                <div
+                  id="inner-div"
+                  className="border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-neutral-200 h-full"
+                >
+                  <div
+                    id="design"
+                    className="flex justify-center mb-2 lg:mb-0 mt-1 lg:mt-10"
+                  >
+                    <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-400"></div>
+                  </div>
 
-              <div
-                id="inner-div"
-                className="border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-neutral-200 h-full"
-              >
-                <div id="design" className="flex justify-center mb-2 lg:mb-0 mt-1 lg:mt-10">
-                  <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-400"></div>
+                  <div
+                    onMouseEnter={(e) => {
+                      setLottie5(false);
+                    }}
+                    onMouseLeave={(e) => {
+                      setLottie5(true);
+                    }}
+                  >
+                    <Lottie
+                      isStopped={Lottie5}
+                      options={mobwithdivfile}
+                      height={mobWithDivDimensions.height}
+                      width={mobWithDivDimensions.width}
+                    />
+                    <Lottie
+                      isStopped={Lottie5}
+                      options={defaultCenter}
+                      height={defaultCenterDimensions.height}
+                      width={defaultCenterDimensions.width}
+                    />
+                  </div>
+                  <div
+                    id="design"
+                    className="flex justify-center mt-1 lg:mt-10"
+                  >
+                    <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-400"></div>
+                  </div>
                 </div>
 
-                <Lottie options={mobwithdivfile} height={mobWithDivDimensions.height} width={mobWithDivDimensions.width} />
-                <Lottie options={defaultCenter} height={defaultCenterDimensions.height} width={defaultCenterDimensions.width} />
-                <div id="design" className="flex justify-center mt-1 lg:mt-10">
-                  <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-400"></div>
-                </div>
+                <p className="hidden lg:block text-center">_______________</p>
+                <p className="block lg:hidden text-center">_________</p>
               </div>
-
-              <p className="hidden lg:block text-center">_______________</p>
-              <p className="block lg:hidden text-center">_________</p>
-            </div>
+            </Zoom>
           </div>
-        </div> */}
+        </div>
 
         {/* Section 2 */}
-        {/* <Section2 /> */}
-        
+        <Section2 />
 
         {/* Section 3 */}
         <Section3 />
-       
 
         {/* Section 4 */}
-        {/* <Section4 />
-        
+        <Section4 />
 
-        <Footer/> */}
+        <Footer />
       </div>
     </>
   );

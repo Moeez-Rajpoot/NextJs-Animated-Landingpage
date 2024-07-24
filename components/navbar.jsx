@@ -51,8 +51,8 @@ const Navbar = () => {
 
   const getLinkClass = (path) => {
     return pathname === path
-      ?  `flex py-3 sm:px-4 text-slate-900 items-center sm:mt-0 justify-center sm:mb-7 mt-2 md:mb-0 md:mr-5 bg-slate-300 rounded-sm " ${prompt.className}`
-      :  `flex py-3 sm:px-4 text-white items-center sm:mt-0 justify-center sm:mb-7 mt-2 md:mb-0 md:mr-5  hover:underline  ${prompt.className}`
+      ?  `flex py-3 sm:px-4 text-slate-900 items-center sm:mt-0 justify-center sm:mb-7 mt-2 md:mb-0 md:mr-5 bg-slate-300 rounded-sm text-nowrap " ${prompt.className}`
+      :  `flex py-3 sm:px-4 text-white items-center sm:mt-0 justify-center sm:mb-7 mt-2 md:mb-0 md:mr-5  hover:underline text-nowrap  ${prompt.className}`
   };
 
   return (
@@ -99,7 +99,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li >
-                <Link className="bg-blue-600 px-6 py-3 text-white font-semibold rounded-md flex justify-center items-center " href="/dashboard/courses" onClick={handleLinkClick}>
+                <Link className="bg-blue-600 px-6 py-3 text-white font-semibold rounded-md flex justify-center items-center text-nowrap " href="/dashboard/courses" onClick={handleLinkClick}>
                   Sign Up <i className="fa-brands fa-discourse"></i>
                 </Link>
               </li>

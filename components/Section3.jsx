@@ -1,5 +1,6 @@
 import Lottie from "react-lottie";
 import Location from "../public/location.json";
+import { AttentionSeeker, Fade, JackInTheBox } from "react-awesome-reveal";
 
 
 const defaultlocation = {
@@ -18,17 +19,21 @@ export default function Section3() {
           id="section3"
         >
           <div className=" flex flex-col  items-center w-full h-fit text-white">
-            <h1 className="text-5xl font-extrabold text-slate-700 mt-32 ">
+            <JackInTheBox duration={1000}>
+            <h1 className="text-3xl text-center xl:text-5xl font-extrabold text-slate-700 mt-32 ">
               Test how our app animations work!
             </h1>
+            </JackInTheBox>
 
-            <p className="text-xl text-slate-600 mt-3">
+            <Fade duration={1000}>
+            <p className="text-md text-center px-3 xl:px-0  xl:text-xl text-slate-600 mt-3">
               Download this demo file and test it in your framework.
             </p>
+            </Fade>
 
             <div
               id="locimage"
-              className="h-fit mt-20 "
+              className="h-fit mt-10 xl:mt-20 "
             >
               <Lottie
                 options={defaultlocation}
@@ -37,20 +42,24 @@ export default function Section3() {
               />
             </div>
 
-            <div id="sec3btns" className="flex gap-6 mt-10 ">
-              <button className="px-8 py-3 bg-blue-900 hover:bg-blue-800 rounded-lg shadow-md text-lg font-semibold">
+            <div id="sec3btns" className="flex gap-3 xl:gap-6 mt-10 ">
+              <AttentionSeeker effect="pulse" duration={2000}>
+              <button className="px-3 xl:px-8 py-3 ml-2 xl:ml-0 bg-blue-900 hover:bg-blue-800 rounded-lg shadow-md text-sm xl:text-lg font-semibold">
                 Download Demo.js
               </button>
+              </AttentionSeeker>
 
-              <button className="px-8 py-3 bg-blue-300 hover:bg-blue-400 rounded-lg shadow-md text-lg font-semibold">
+              <AttentionSeeker effect="pulse" duration={2000}>
+              <button className="px-3 xl:px-8 py-3 mr-2 xl:mr-0 bg-blue-300 hover:bg-blue-400 rounded-lg shadow-md text-sm xl:text-lg font-semibold">
                 Download Demo.dart
               </button>
+              </AttentionSeeker>
             </div>
 
             <h3 className="text-lg font-semibold text-slate-800 mt-7">
               Requirements
             </h3>
-            <p className="text-md font-light text-slate-700 mt-2">
+            <p className="text-md text-center px-2 xl:px-0 font-light text-slate-700 mt-2">
               Get the player and the Web View module for Flutter or React native
             </p>
 
