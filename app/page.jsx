@@ -149,6 +149,7 @@ export default function Home() {
           >
             Animate Now
           </button>
+          
           <JackInTheBox fraction={0}>
             <Image
               className="ml-[28%] mt-2"
