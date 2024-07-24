@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <body className={inter.className}>
         <script
           type="module"

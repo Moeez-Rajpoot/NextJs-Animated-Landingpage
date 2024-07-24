@@ -35,15 +35,6 @@ const Navbar = () => {
     };
   }, []);
 
-  const handleLinkClick = (event, sectionId) => {
-    event.preventDefault();
-    setIsOpen(false);
-    setIsUserMenuOpen(false);
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const getLinkClass = (path) => {
     return pathname === path
@@ -78,7 +69,7 @@ const Navbar = () => {
                 <a
                   className={getLinkClass("/dashboard/users")}
                   href="#section1"
-                  onClick={(e) => handleLinkClick(e, "section1")}
+                  scroll={false}
                 >
                   Blog <i className="fa-solid fa-users"></i>
                 </a>
@@ -87,7 +78,7 @@ const Navbar = () => {
                 <a
                   className={getLinkClass("/dashboard/addcourse")}
                   href="#section2"
-                  onClick={(e) => handleLinkClick(e, "section2")}
+                  scroll={false}
                 >
                   Tutorial <i className="fa-solid fa-plus"></i>
                 </a>
@@ -96,7 +87,7 @@ const Navbar = () => {
                 <a
                   className={getLinkClass("/dashboard/courses")}
                   href="#section3"
-                  onClick={(e) => handleLinkClick(e, "section3")}
+                  scroll={false}
                 >
                   Download <i className="fa-brands fa-discourse"></i>
                 </a>
@@ -105,7 +96,7 @@ const Navbar = () => {
                 <a
                   className={getLinkClass("/dashboard/courses")}
                   href="#section4"
-                  onClick={(e) => handleLinkClick(e, "section4")}
+                  scroll={false}
                 >
                   Build <i className="fa-brands fa-discourse"></i>
                 </a>
@@ -114,7 +105,7 @@ const Navbar = () => {
                 <a
                   className="bg-blue-600 px-6 py-3 text-white font-semibold rounded-md flex justify-center items-center text-nowrap"
                   href="/dashboard/courses"
-                  onClick={(e) => handleLinkClick(e, "section5")}
+                  scroll={false}
                 >
                   Sign Up <i className="fa-brands fa-discourse"></i>
                 </a>
