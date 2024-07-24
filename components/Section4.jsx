@@ -39,7 +39,7 @@ export default function Section4() {
   const [exportstate, setExport] = useState(true);
   return (
     <>
-      <div className=" bg-slate-950 h-fit w-full flex flex-col items-center pb-28">
+      <div id="section4" className=" bg-slate-950 h-fit w-full flex flex-col items-center pb-28">
         <Fade fraction={0} duration={3000}>
           <h1 className="text-4xl lg:text-6xl text-slate-50 font-bold mt-36 text-center ">
             How to create animations

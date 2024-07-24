@@ -6,13 +6,10 @@ import { AcmeLogo } from "./logo";
 import { usePathname } from "next/navigation";
 import { Prompt } from "next/font/google";
 
-
-
 const prompt = Prompt({
   weight: "400",
   subsets: ['latin'],
 });
-
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +18,6 @@ const Navbar = () => {
   const mobileMenuRef = useRef(null);
   const router = useRouter();
   const pathname = usePathname();
-
-
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -40,19 +35,20 @@ const Navbar = () => {
     };
   }, []);
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (event, sectionId) => {
+    event.preventDefault();
     setIsOpen(false);
     setIsUserMenuOpen(false);
-  };
-
-  const handleLogout = () => {
-   
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const getLinkClass = (path) => {
     return pathname === path
-      ?  `flex py-3 sm:px-4 text-slate-900 items-center sm:mt-0 justify-center sm:mb-7 mt-2 md:mb-0 md:mr-5 bg-slate-300 rounded-sm text-nowrap " ${prompt.className}`
-      :  `flex py-3 sm:px-4 text-white items-center sm:mt-0 justify-center sm:mb-7 mt-2 md:mb-0 md:mr-5  hover:underline text-nowrap  ${prompt.className}`
+      ? `flex py-3 sm:px-4 text-slate-900 items-center sm:mt-0 justify-center sm:mb-7 mt-2 md:mb-0 md:mr-5 bg-slate-300 rounded-sm text-nowrap " ${prompt.className}`
+      : `flex py-3 sm:px-4 text-white items-center sm:mt-0 justify-center sm:mb-7 mt-2 md:mb-0 md:mr-5  hover:underline text-nowrap  ${prompt.className}`;
   };
 
   return (
@@ -78,34 +74,52 @@ const Navbar = () => {
             style={{ zIndex: 9 }}
           >
             <ul className="flex flex-col md:flex-row list-none w-full md:w-auto sm:mr-36">
-              <li >
-                <Link className={getLinkClass("/dashboard/users")} href="/dashboard/users" onClick={handleLinkClick}>
+              <li>
+                <a
+                  className={getLinkClass("/dashboard/users")}
+                  href="#section1"
+                  onClick={(e) => handleLinkClick(e, "section1")}
+                >
                   Blog <i className="fa-solid fa-users"></i>
-                </Link>
+                </a>
               </li>
-              <li >
-                <Link className={getLinkClass("/dashboard/addcourse")} href="/dashboard/addcourse" onClick={handleLinkClick}>
+              <li>
+                <a
+                  className={getLinkClass("/dashboard/addcourse")}
+                  href="#section2"
+                  onClick={(e) => handleLinkClick(e, "section2")}
+                >
                   Tutorial <i className="fa-solid fa-plus"></i>
-                </Link>
+                </a>
               </li>
-              <li >
-                <Link className={getLinkClass("/dashboard/courses")} href="/dashboard/courses" onClick={handleLinkClick}>
+              <li>
+                <a
+                  className={getLinkClass("/dashboard/courses")}
+                  href="#section3"
+                  onClick={(e) => handleLinkClick(e, "section3")}
+                >
                   Pricing <i className="fa-brands fa-discourse"></i>
-                </Link>
+                </a>
               </li>
-              <li >
-                <Link className={getLinkClass("/dashboard/courses")} href="/dashboard/courses" onClick={handleLinkClick}>
+              <li>
+                <a
+                  className={getLinkClass("/dashboard/courses")}
+                  href="#section4"
+                  onClick={(e) => handleLinkClick(e, "section4")}
+                >
                   Log In <i className="fa-brands fa-discourse"></i>
-                </Link>
+                </a>
               </li>
-              <li >
-                <Link className="bg-blue-600 px-6 py-3 text-white font-semibold rounded-md flex justify-center items-center text-nowrap " href="/dashboard/courses" onClick={handleLinkClick}>
+              <li>
+                <a
+                  className="bg-blue-600 px-6 py-3 text-white font-semibold rounded-md flex justify-center items-center text-nowrap"
+                  href="/dashboard/courses"
+                  onClick={(e) => handleLinkClick(e, "section5")}
+                >
                   Sign Up <i className="fa-brands fa-discourse"></i>
-                </Link>
+                </a>
               </li>
-              <div className="relative flex items-center sm:mt-2 sm:mr-8 justify-center mt-3 mb-2">
-                
-                  </div>
+              <div className="relative flex items-center sm:mt-2 sm:mr-8 justify-center mt-3 mb-2"></div>
             </ul>
           </div>
         </div>
