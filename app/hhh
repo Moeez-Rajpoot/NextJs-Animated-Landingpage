@@ -103,7 +103,7 @@ export default function Home() {
   return (
     <>
       <div>
-        {/* <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-indigo-900 h-[150vh] w-full text-white mt-20">
+        <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-indigo-900 h-[150vh] w-full text-white mt-20">
           <h1 className="text-5xl text-center mt-10 sm:text-7xl sm:px-36 sm:mt-20 font-bold flex flex-col justify-center items-center">
             Create Lightweight
             <span>Mobile App Animations</span>
@@ -148,7 +148,7 @@ export default function Home() {
               <p className="block h-fit lg:hidden text-center">_________</p>
             </div>
 
-            <div className="hidden xl:block w-64 h-[550px] bg-blue-800 rounded-xl pb-14">
+            <div className="hidden lg:flex w-64 h-[550px] bg-blue-800 rounded-xl pb-14">
               <p className="text-center">_______________</p>
 
               <div
@@ -247,14 +247,14 @@ export default function Home() {
               <p className="block lg:hidden text-center">_________</p>
             </div>
           </div>
-        </div> */}
+        </div>
 
         {/* Section 2 */}
         {/* <Section2 /> */}
         
 
         {/* Section 3 */}
-        <Section3 />
+        {/* <Section3 /> */}
        
 
         {/* Section 4 */}
