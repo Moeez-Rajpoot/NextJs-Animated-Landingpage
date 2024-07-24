@@ -81,6 +81,7 @@ const defaultCenter = {
 
 export default function Home() {
   const [dimensions, setDimensions] = useState({ width: 280, height: 400 });
+  const [Section1Dimension, setSection1Dimension] = useState({ width: 250, height: 300 });
   const [checkmarkDimensions, setCheckmarkDimensions] = useState({
     width: 80,
     height: 80,
@@ -102,12 +103,14 @@ export default function Home() {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
+        setSection1Dimension({ width: 260, height: 300 });
         setDimensions({ width: 280, height: 400 });
         setCheckmarkDimensions({ width: 80, height: 80 });
         setMobWithDivDimensions({ width: 250, height: 170 });
         setDefaultCenterDimensions({ width: 100, height: 100 });
       } else {
         setDimensions({ width: 100, height: 150 });
+        setSection1Dimension({ width: 100, height: 150 });
         setCheckmarkDimensions({ width: 20, height: 20 });
         setMobWithDivDimensions({ width: 90, height: 60 });
         setDefaultCenterDimensions({ width: 40, height: 40 });
@@ -176,6 +179,7 @@ export default function Home() {
                   className="border-y-8 lg:border-y-8 border-x-4 border-x-transparent-400 rounded-3xl bg-neutral-200 h-full"
                 >
                   <div
+                  className="xl:mt-5"
                     onMouseEnter={(e) => {
                       setLottie1(false);
                     }}
@@ -185,14 +189,14 @@ export default function Home() {
                   >
                     <Lottie
                       options={mobfile}
-                      height={dimensions.height}
-                      width={dimensions.width}
+                      height={Section1Dimension.height}
+                      width={Section1Dimension.width}
                       isStopped={Lottie1}
                     />
                   </div>
                   <div
                     id="design"
-                    className="flex justify-center mt-0 lg:mt-10"
+                    className="flex justify-center mt-0 xl:mt-1"
                   >
                     <div className="rounded-lg py-1 lg:py-3 w-2/3 bg-slate-400"></div>
                   </div>
