@@ -110,7 +110,7 @@ export default function Home() {
         setDefaultCenterDimensions({ width: 100, height: 100 });
       } else {
         setDimensions({ width: 100, height: 150 });
-        setSection1Dimension({ width: 100, height: 150 });
+        setSection1Dimension({ width: 90, height: 150 });
         setCheckmarkDimensions({ width: 20, height: 20 });
         setMobWithDivDimensions({ width: 90, height: 60 });
         setDefaultCenterDimensions({ width: 40, height: 40 });
@@ -167,7 +167,7 @@ export default function Home() {
 
           <div
             id="section-mob"
-            className="flex justify-center items-center gap-2 lg:gap-5 h-fit mt-20 md:mt-28 pb-10 mb-10"
+            className="flex justify-center items-center gap-1 lg:gap-5 h-fit mt-20 md:mt-28 pb-10 mb-10"
           >
             <Zoom duration={1000} fraction={0}>
               <div className="w-24 h-[200px] lg:w-64 lg:h-[500px] bg-slate-400 rounded-xl pb-14">
