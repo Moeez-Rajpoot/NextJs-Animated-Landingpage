@@ -20,17 +20,53 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+# My Website
 
-To learn more about Next.js, take a look at the following resources:
+Welcome to the repository for my website! This project showcases a modern, responsive web application built with [Next.js,Tailwind, LottieFiles etc.]. Below you will find images of the various pages and features of the website.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Table of Contents
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [Section1A](#Section1A)
+- [Section1B](#Section1B)
+- [Section2A](#Section2A)
+- [Section2B](#Section2B)
+- [Section3](#Section3)
+- [Section4](#Section4)
+- [Section5](#Section5)
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Section 1 A
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![Section 1 A](https://github.com/Moeez-Rajpoot/NextJs-Animated-Landingpage/blob/main/Images/Section1.png)
+
+## Section 1 B
+
+![Section 1 B](https://github.com/Moeez-Rajpoot/NextJs-Animated-Landingpage/blob/main/Images/Section1b.png)
+
+## Section 2 A
+
+![Section 2 A](https://github.com/Moeez-Rajpoot/NextJs-Animated-Landingpage/blob/main/Images/Section2.png)
+
+## Section 2 B
+
+![Section 2 B](https://github.com/Moeez-Rajpoot/NextJs-Animated-Landingpage/blob/main/Images/Section2b.png)
+
+## Section 3
+
+![Section 3](https://github.com/Moeez-Rajpoot/NextJs-Animated-Landingpage/blob/main/Images/Section3.png)
+
+## Section 4
+
+![Section 4](https://github.com/Moeez-Rajpoot/NextJs-Animated-Landingpage/blob/main/Images/Section4.png)
+
+## Section 5
+
+![Section 5](https://github.com/Moeez-Rajpoot/NextJs-Animated-Landingpage/blob/main/Images/Section5.png)
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
