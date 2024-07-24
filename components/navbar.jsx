@@ -98,7 +98,7 @@ const Navbar = () => {
                   href="#section3"
                   onClick={(e) => handleLinkClick(e, "section3")}
                 >
-                  Pricing <i className="fa-brands fa-discourse"></i>
+                  Download <i className="fa-brands fa-discourse"></i>
                 </a>
               </li>
               <li>
@@ -107,7 +107,7 @@ const Navbar = () => {
                   href="#section4"
                   onClick={(e) => handleLinkClick(e, "section4")}
                 >
-                  Log In <i className="fa-brands fa-discourse"></i>
+                  Build <i className="fa-brands fa-discourse"></i>
                 </a>
               </li>
               <li>
