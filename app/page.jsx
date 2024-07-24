@@ -122,8 +122,8 @@ export default function Home() {
 
   return (
     <>
-      <div >
-        <div id="section1" className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-indigo-900 h-[150vh] w-full text-white mt-20">
+      <div id="section1" >
+        <div className="flex flex-col items-center bg-gradient-to-b from-gray-900 to-indigo-900 h-[150vh] w-full text-white mt-20">
           <AttentionSeeker fraction={0} effect="rubberBand">
             <h1 className="text-5xl text-center mt-10 sm:text-7xl sm:px-36 sm:mt-20 font-bold flex flex-col justify-center items-center">
               Create Lightweight

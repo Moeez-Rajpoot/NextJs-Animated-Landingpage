@@ -101,10 +101,10 @@ const Navbar = () => {
                   Build <i className="fa-brands fa-discourse"></i>
                 </a>
               </li>
-              <li>
+              <li className="hover:animate-pulse" >
                 <a
                   className="bg-blue-600 px-6 py-3 text-white font-semibold rounded-md flex justify-center items-center text-nowrap"
-                  href="/dashboard/courses"
+                  href="#"
                   scroll={false}
                 >
                   Sign Up <i className="fa-brands fa-discourse"></i>
