@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project.
 
 ## Live Link
 
-Check out the live site [here](https://next-js-animator-landingpage.vercel.app/).
+Check out the live site [here](https://next-js-animator-landingpage.vercel.app/)
 
 ## Getting Started
 
